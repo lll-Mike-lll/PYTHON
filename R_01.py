@@ -42,14 +42,19 @@ def ins_blank(name,n,a1,a2,a3,a4,a5,a6,a7):
 #    a.execute(sql)
     conn.commit()
     conn.close()    
-    
-#na = input('name:')
-#data = read_web(na)
-#print(data)
+  
+na = input('name:')
+data = read_web(na)
+print(data)
 
+na2 = input('name:')
+data2 = read_web(na2)
+print(data2)
     
 #name = input('name:')
 #cre_tb(name)
 
 #name1 = input('name:')
 #cre_db(name1)
+    
+#ins_blank('m1',1,9,9,9,9,9,9,9)
