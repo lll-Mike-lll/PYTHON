@@ -15,7 +15,7 @@ def read_web(a):
     return dt
 
 def cre_tb(name):
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike')
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike1')
     a = conn.cursor()
     sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
     a.execute(sql)
@@ -31,7 +31,7 @@ def cre_db(name):
     conn.close()
     
 def ins_blank(name,n,a1,a2,a3,a4,a5,a6,a7):
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike')
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike1')
     a = conn.cursor()
 #    sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
     sql = "INSERT INTO "+name+"(id,date,open,max,min,close,vol,val) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
@@ -42,15 +42,29 @@ def ins_blank(name,n,a1,a2,a3,a4,a5,a6,a7):
 #    a.execute(sql)
     conn.commit()
     conn.close()    
-  
-na = input('name:')
-data = read_web(na)
-print(data)
 
-na2 = input('name:')
-data2 = read_web(na2)
-print(data2)
-    
+ 
+def mike(name):
+    na = name
+    data_stock = read_web(na)
+#print()
+
+#na2 = input('name:')
+#data2 = read_web(na2)
+#print(data2)
+    cre_tb(na)
+    n = len(data_stock[0])
+    data_list1 = []
+    for i in range(9):
+        data_list1.append([])
+    for i in range(9):
+        for j in range(n):
+            data_list1[i].append(data_stock[0].iloc[j,i])
+
+#print(data_list)
+    for i in range(n):
+        ins_blank(na,i,data_list1[0][n-1-i],str(data_list1[1][n-1-i]),str(data_list1[2][n-1-i]),str(data_list1[3][n-1-i]),str(data_list1[4][n-1-i]),str(data_list1[7][n-1-i]),str(data_list1[8][n-1-i]))
+
 #name = input('name:')
 #cre_tb(name)
 
@@ -58,3 +72,5 @@ print(data2)
 #cre_db(name1)
     
 #ins_blank('m1',1,9,9,9,9,9,9,9)
+
+mike()
