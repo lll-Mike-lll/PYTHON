@@ -29,7 +29,7 @@ def se_db(name):
 
 def conn_db2(name,n,a1,a2,a3,a4,a5,a6,a7):
 #def conn_db():
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='pystock')
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike1')
     a = conn.cursor()
 #    sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
     sql = "INSERT INTO "+name+"(id,date,open,max,min,close,vol,val) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
@@ -50,9 +50,22 @@ def mike():
 #    print(data2[0][1])
 #    print(len(data1[0]))
 #    print(n)
+    n3 = 0
     print(data1[0].iloc[1][0])
     for i in range(n2):
         if data2[n-1][1] == data1[0].iloc[i][0]:
             print(i)
+#            print(data2)
+            n3 = i
+    for i in range(8):
+        print(data1[0].iloc[i][0])
+        conn_db2('ptt',n+i,data1[0].iloc[i][0],
+                  str(data1[0].iloc[i][1]),
+                  str(data1[0].iloc[i][2]),
+                  str(data1[0].iloc[i][3]),
+                  str(data1[0].iloc[i][4]),
+                  str(data1[0].iloc[i][7]),
+                  str(data1[0].iloc[i][8]))
+
 
 mike()
