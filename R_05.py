@@ -36,6 +36,7 @@ def mike():
     n= -1
     p=len(data)
     print(len(dt_today[0]))
+    print(data[0][1])
 #    for i in range(len(dt_today)):
 ##        data1.append(data[i][1])
 #        if data[p]==dt_today[i]:
@@ -46,3 +47,4 @@ def mike():
     
     
 mike()
+   
