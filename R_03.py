@@ -26,3 +26,18 @@ def se_db(name):
     print(len(row_db))
 #    print(row_db)
     return row_db
+
+def mike():
+    data1 = read_web('ptt')
+    data2 = se_db('ptt')
+    n = len(data2)
+    n2 = len(data1[0])
+#    print(data2[0][1])
+#    print(len(data1[0]))
+#    print(n)
+    print(data1[0].iloc[1][0])
+    for i in range(n2):
+        if data2[n-1][1] == data1[0].iloc[i][0]:
+            print(i)
+
+mike()
