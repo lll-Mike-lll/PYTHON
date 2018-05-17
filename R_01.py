@@ -15,7 +15,7 @@ def read_web(a):
     return dt
 
 def cre_tb(name):
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike1')
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike')
     a = conn.cursor()
     sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
     a.execute(sql)
@@ -31,7 +31,7 @@ def cre_db(name):
     conn.close()
     
 def ins_blank(name,n,a1,a2,a3,a4,a5,a6,a7):
-    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike1')
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='mike')
     a = conn.cursor()
 #    sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
     sql = "INSERT INTO "+name+"(id,date,open,max,min,close,vol,val) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
@@ -85,8 +85,14 @@ name_s =['AAV', 'ADVANC', 'AMATA', 'ANAN', 'AOT', 'AP',
          'SPRC', 'STA', 'STEC', 'SUPER', 'TASCO', 'TCAP', 'THAI',
          'THCOM', 'TISCO', 'TKN', 'TMB', 'TOP', 'TPIPL', 'TPIPP',
           'TTA', 'TU', 'TVO', 'UNIQ', 'UV', 'WHA', 'WHAUP', 'WORK']
+
+name_s2 = ['ADVANC', 'ANAN', 'AP', 'BA', 'BBL', 'BLAND',
+           'CPF', 'EGCO', 'HANA', 'INTUCH', 'KKP', 'KTB',
+           'KTC', 'LH', 'LPN', 'MC', 'PTT', 'PTTGC', 'QH',
+           'SCB', 'SCC', 'SIRI', 'SPALI', 'TASCO', 'TCAP',
+           'THCOM', 'TISCO', 'TMB', 'TU', 'TVO']
 from time import sleep
-for i in range(len(name_s)):
-    mike(name_s[i])
+for i in range(len(name_s2)):
+    mike(name_s2[i])
     print(i)
     sleep(10)

@@ -6,10 +6,10 @@ Created on Tue May 15 12:07:09 2018
 """
 import mysql.connector
 import pandas as pann
-data = pann.read_html('https://marketdata.set.or.th/mkt/sectorquotation.do?sector=SET100&language=th&country=TH')
-#print(data[2])
-#print(len(data))
-#name = data[2]
+data = pann.read_html('https://marketdata.set.or.th/mkt/sectorquotation.do?sector=SETHD&language=th&country=TH')
+print(data[2])
+print(len(data))
+name = data[2]
 #name1 = []
 #for i in range(len(name)):
 #    name1.append(name[i][1])
@@ -25,10 +25,10 @@ def cre_tb(name):
 #print(type(name))
 #data1 = tuple(name)
 #print(name.iloc[1][0])
-#na_stock = []
-#for i in range (len(name)):
-#    na_stock.append(name.iloc[i][0])    
-#print(na_stock)
+na_stock = []
+for i in range (len(name)):
+    na_stock.append(name.iloc[i][0])    
+print(na_stock)
 
 name_s =['AAV', 'ADVANC', 'AMATA', 'ANAN', 'AOT', 'AP',
          'BA', 'BANPU', 'BBL', 'BCH', 'BCP', 'BCPG', 'BDMS',
@@ -44,4 +44,9 @@ name_s =['AAV', 'ADVANC', 'AMATA', 'ANAN', 'AOT', 'AP',
          'THCOM', 'TISCO', 'TKN', 'TMB', 'TOP', 'TPIPL', 'TPIPP',
           'TTA', 'TU', 'TVO', 'UNIQ', 'UV', 'WHA', 'WHAUP', 'WORK']
 
-print(type(name_s))
+name_s2 = ['ADVANC', 'ANAN', 'AP', 'BA', 'BBL', 'BLAND',
+           'CPF', 'EGCO', 'HANA', 'INTUCH', 'KKP', 'KTB',
+           'KTC', 'LH', 'LPN', 'MC', 'PTT', 'PTTGC', 'QH',
+           'SCB', 'SCC', 'SIRI', 'SPALI', 'TASCO', 'TCAP',
+           'THCOM', 'TISCO', 'TMB', 'TU', 'TVO']
+#print(type(name_s))
