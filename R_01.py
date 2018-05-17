@@ -72,5 +72,21 @@ def mike(name):
 #cre_db(name1)
     
 #ins_blank('m1',1,9,9,9,9,9,9,9)
-
-mike()
+name_s =['AAV', 'ADVANC', 'AMATA', 'ANAN', 'AOT', 'AP',
+         'BA', 'BANPU', 'BBL', 'BCH', 'BCP', 'BCPG', 'BDMS',
+         'BEAUTY', 'BEC', 'BEM', 'BH', 'BIG', 'BJC', 'BLAND',
+         'BPP', 'BTS', 'CBG', 'CENTEL', 'CHG', 'CK', 'CKP', 'COM7',
+         'CPALL', 'CPF', 'CPN', 'DTAC', 'EA', 'EGCO', 'EPG', 'ESSO',
+         'GFPT', 'GGC', 'GLOBAL', 'GPSC', 'GUNKUL', 'HANA', 'HMPRO',
+         'INTUCH', 'IRPC', 'ITD', 'IVL', 'JMART', 'JWD', 'KBANK', 'KCE',
+         'KKP', 'KTB', 'KTC', 'LH', 'LPN', 'MAJOR', 'MC', 'MEGA', 'MINT',
+         'MONO', 'MTC', 'ORI', 'PSH', 'PSL', 'PTG', 'PTT', 'PTTEP', 'PTTGC',
+         'QH', 'ROBINS', 'SAWAD', 'SCB', 'SCC', 'SGP', 'SIRI', 'SPALI',
+         'SPRC', 'STA', 'STEC', 'SUPER', 'TASCO', 'TCAP', 'THAI',
+         'THCOM', 'TISCO', 'TKN', 'TMB', 'TOP', 'TPIPL', 'TPIPP',
+          'TTA', 'TU', 'TVO', 'UNIQ', 'UV', 'WHA', 'WHAUP', 'WORK']
+from time import sleep
+for i in range(len(name_s)):
+    mike(name_s[i])
+    print(i)
+    sleep(10)

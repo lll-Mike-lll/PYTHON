@@ -43,3 +43,5 @@ name_s =['AAV', 'ADVANC', 'AMATA', 'ANAN', 'AOT', 'AP',
          'SPRC', 'STA', 'STEC', 'SUPER', 'TASCO', 'TCAP', 'THAI',
          'THCOM', 'TISCO', 'TKN', 'TMB', 'TOP', 'TPIPL', 'TPIPP',
           'TTA', 'TU', 'TVO', 'UNIQ', 'UV', 'WHA', 'WHAUP', 'WORK']
+
+print(type(name_s))
