@@ -27,6 +27,21 @@ def se_db(name):
 #    print(row_db)
     return row_db
 
+def conn_db2(name,n,a1,a2,a3,a4,a5,a6,a7):
+#def conn_db():
+    conn = mysql.connector.connect(host = 'localhost', user = 'root', password='',db='pystock')
+    a = conn.cursor()
+#    sql = "CREATE TABLE "+name+"(id INT PRIMARY KEY,date text, open text,max text,min text,close text,vol text,val text)"
+    sql = "INSERT INTO "+name+"(id,date,open,max,min,close,vol,val) VALUES(%s,%s,%s,%s,%s,%s,%s,%s)"
+#    num = 1
+#    add_db = (num,'pp','pp','pp','pp','pp','pp','pp')
+    add_db = (n,a1,a2,a3,a4,a5,a6,a7)
+    a.execute(sql,add_db)
+#    a.execute(sql)
+    conn.commit()
+    conn.close()
+    
+    
 def mike():
     data1 = read_web('ptt')
     data2 = se_db('ptt')
