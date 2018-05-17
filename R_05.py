@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue May 15 21:17:25 2018
+Created on Wed May 16 20:52:34 2018
 
 @author: MIKE
 """
-import mysql.connector
+
 import pandas as pann
+import mysql.connector 
 
 def read_web(a):
     dt = pann.read_html('http://www.panphol.com/data/page/stockprice/'+a+'#')
@@ -21,16 +22,27 @@ def se_db(name):
     cur.execute(sql)
     row_db  = cur.fetchall()
 #    print(row_db)
-#    print(type(row_db))
-#    n = len(row_db)
-#    print(len(row_db))
+    print(type(row_db))
+    n = len(row_db)
+    print(len(row_db))
+#    print(row_db)
     return row_db
-
-row = se_db('ptt')
-date_01 = []
-for i in range(len(row)):
-#    print(i)
-#    date_01.append(row[1][i])
-#    print(row[i][1])
-       
     
+    
+def mike():
+    dt_today = read_web('ptt')
+    data =   se_db('ptt')
+    data1 = []
+    n= -1
+    p=len(data)
+    print(len(dt_today[0]))
+#    for i in range(len(dt_today)):
+##        data1.append(data[i][1])
+#        if data[p]==dt_today[i]:
+#            n=i
+#    print(i)
+        
+#    print(data1)
+    
+    
+mike()
